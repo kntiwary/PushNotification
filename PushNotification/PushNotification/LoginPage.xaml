@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PushNotification.LoginPage">
+    <ContentPage.Content>
+       
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+                <StackLayout x:Name="UserNameStack" Grid.Row="0" 
+                             Orientation="Horizontal" 
+                             HorizontalOptions="StartAndExpand" >
+                <Label Text="Enter User name" TextColor="Aquamarine" VerticalOptions="Center" WidthRequest="200"/>
+                <Entry x:Name="EntryUserName" Text="{Binding Name}" WidthRequest="200" ></Entry>
+                </StackLayout>
+
+
+            <StackLayout x:Name="PasswordStack" Grid.Row="1" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                <Label Text="Enter Password" TextColor="Aquamarine" VerticalOptions="Center" WidthRequest="200"/>
+
+                <Entry x:Name="EntryPassword" Text="{Binding Password}" WidthRequest="200"></Entry>                  
+                </StackLayout>
+
+            <StackLayout x:Name="OtpStack" Grid.Row="2" Orientation="Horizontal" HorizontalOptions="StartAndExpand" IsVisible="False" >
+                <Label Text="Enter Otp" TextColor="Aquamarine" VerticalOptions="Center" WidthRequest="200"/>
+                <Entry x:Name="EntryOtp" Text="" TextColor="Aquamarine" VerticalOptions="Center" WidthRequest="200"/>
+                <Button x:Name="OtpCheck" Clicked="otpCheck" BackgroundColor="Brown" Text="enter"></Button>
+
+            </StackLayout>
+            <Button Grid.Row="3"  x:Name="LoginButton" Clicked="login_clicked"
+                    BackgroundColor="Brown"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
